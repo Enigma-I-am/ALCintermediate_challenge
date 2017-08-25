@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">"ALC intermediate "</string>
+    <string name="internet">No internet connection, swipe down to refresh</string>
+</resources>
