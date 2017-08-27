@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.itis.alcintermediate.controller.Detail_Activity;
 import com.example.itis.alcintermediate.model.Item;
@@ -43,6 +42,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
         Picasso.with(context)
                 .load(items.get(i).getAvatarUrl())
+                .transform(new CircleTransform())
                 .placeholder(R.drawable.load)
                 .into(viewHolder.imageView);
 

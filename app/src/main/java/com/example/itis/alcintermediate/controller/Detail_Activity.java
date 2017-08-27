@@ -13,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.itis.alcintermediate.GlideCircleTransformation;
 import com.example.itis.alcintermediate.R;
 
 /**
@@ -46,7 +48,12 @@ public class Detail_Activity extends AppCompatActivity{
         Username.setText(username);
         Glide.with(this)
                 .load(avatarURl)
+                .thumbnail(0.5f)
+                .crossFade()
                 .placeholder(R.drawable.load)
+                .error(R.mipmap.ic_launcher)
+                .bitmapTransform(new GlideCircleTransformation(getApplicationContext()))
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(imageView);
         getSupportActionBar().setTitle("Details Activity");
 
